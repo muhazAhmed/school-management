@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { menuItems } from "./arrayItems/menuItems";
+import { menuItems } from "../lib/menuItems";
 import Image from "next/image";
 
 const Menu = () => {
@@ -9,9 +9,9 @@ const Menu = () => {
         <div className="flex flex-col gap-2" style={{paddingLeft: "10px"}} key={index}>
           <Link
             href={item?.href}
-            className="flex items-center justify-center lg:justify-start gap-4 py-2 text-gray-500"
+            className="flex items-center justify-center lg:justify-start gap-4 py-2 text-white"
           >
-            <Image src={item?.icon} alt="icon" width={20} height={20} />
+            <i className={item?.icon} />
             <span className="hidden lg:block">{item?.label}</span>
           </Link>
         </div>
