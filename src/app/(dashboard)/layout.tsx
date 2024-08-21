@@ -3,8 +3,8 @@ import "../globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import Navbar from "@/components/Navbar";
-const Menu = React.lazy(() => import("../../components/Menu"))
+const Menu = React.lazy(() => import("../../components/Menu"));
+const Navbar = React.lazy(() => import("@/components/Navbar"));
 
 export const metadata: Metadata = {
   title: "School Management Dashboard",
@@ -32,10 +32,13 @@ export default function DashboardLayout({
           />
           <span className="hidden lg:block text-white">AcademIQ</span>
         </Link>
-        <Menu/>
+        <Menu />
       </div>
-      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#0A152F] text-white">
-        <Navbar/>
+      <div
+        className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#0A152F] text-white relative"
+        style={{ height: "100vh", overflowY: "auto" }}
+      >
+        <Navbar />
         {children}
       </div>
     </div>

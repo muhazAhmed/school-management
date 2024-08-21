@@ -1,15 +1,27 @@
-import UserCard from "@/components/UserCard";
+import React from "react";
+const AttendanceChart = React.lazy(() => import("@/components/AttendanceChart"));
+const CountChart = React.lazy(() => import("@/components/CountChart"));
+const UserCard = React.lazy(() => import("@/components/UserCard"));
 
 const AdminPage = () => {
   return (
     <div className="p-4 flex gap-4 flex-col md:flex-row">
-      <div className="w-full lg:w-3/5">
+      <div className="w-full lg:w-3/5 flex flex-col gap-8">
         <div className="flex gap-4 justify-between flex-wrap">
           <UserCard type="student" />
           <UserCard type="teacher" />
           <UserCard type="parent" />
           <UserCard type="staff" />
         </div>
+        <div className="flex gap-4 flex-col lg:flex-row">
+          <div className="w-full lg:w-1/3 h-[450px]">
+            <CountChart />
+          </div>
+          <div className="w-full lg:w-2/3 h-[450px]">
+            <AttendanceChart />
+          </div>
+        </div>
+        <div className="w-full h-[500px]"></div>
       </div>
       <div className="w-full lg:w-1/3"></div>
     </div>
