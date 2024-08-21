@@ -30,11 +30,11 @@ export default function DashboardLayout({
             height={32}
             style={{ borderRadius: "25px" }}
           />
-          <span className="hidden lg:block">AcademIQ</span>
+          <span className="hidden lg:block text-white">AcademIQ</span>
         </Link>
         <Menu/>
       </div>
-      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA]">
+      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#0A152F] text-white">
         <Navbar/>
         {children}
       </div>
